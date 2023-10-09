@@ -1,0 +1,22 @@
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  tr {
+    border: 1px solid #DADEEC;
+  
+  th,
+  td {
+    padding: 0.8rem 1.2rem;
+    text-align: left;
+    font-size: 1rem;
+    border-bottom: 1px solid #DADEEC;
+  }
+  th {
+    background-color: #f2f2f2;
+    font-weight: 700;
+  }
+
+  tr:hover {
+    background-color: #f2f2f2;
+  }}
+}

@@ -1,0 +1,76 @@
+/* ATMCard.scss */
+.atm-card {
+  width: 414px;
+  height: 192px;
+  background-color: white;
+  color: #a7adc3;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border: 1px solid #dadeec;
+
+  &__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__bank {
+    font-size: 16px;
+    font-weight: 700;
+    color: black;
+  }
+  &__icons {
+    align-self: center;
+    font-size: 22px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__number {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  &__holder {
+    font-size: 16px;
+  }
+
+  &__setting {
+    font-size: 26px;
+    align-self: flex-end;
+  }
+}
+.atm-card__image {
+  display: flex;
+}
+.image {
+  background-color: #1e3d8c;
+  border-radius: 100em;
+  width: 2.4em;
+  font-size: 1em;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  align-items: center;
+  height: 2.4em;
+  border: 2px solid white;
+
+&.seconadry {
+    background-color: #1977F3;
+    margin-left: -12px;
+}
+}

@@ -1,0 +1,54 @@
+.cms__content {
+  padding: 1rem;
+  border-radius: 0.6rem;
+  width: 40rem;
+  &.error {
+    border: 1px solid #fe2c25;
+  }
+  &.info {
+    border: 1px solid #007aff;
+  }
+
+  &.warning {
+    border: 1px solid #ff9500;
+  }
+
+  &.success {
+    border: 1px solid #35c759;
+  }
+  .cms__header {
+    display: flex;
+    justify-content: space-between;
+    .cms__header_content {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      .cms__icon {
+        color: #fe2c25;
+        &.error {
+          color: #fe2c25;
+        }
+        &.info {
+          color: #007aff;
+        }
+
+        &.warning {
+          color: #ff9500;
+        }
+
+        &.success {
+          color: #35c759;
+        }
+      }
+    }
+  }
+  .cms__body {
+    p {
+      font-size: 1rem;
+      color: #898989;
+      margin: 0.3rem 1.6rem;
+    }
+  }
+}

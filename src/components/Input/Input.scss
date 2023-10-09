@@ -1,0 +1,119 @@
+.cms__InactiveInput {
+  border: 0.1rem solid #dcdcdc;
+  outline: none;
+  color: #898989;
+  height: 2rem;
+  border-radius: 0.4rem;
+  pointer-events: none;
+
+  &.small {
+    font-size: 1.1rem;
+    padding: 0.2rem 0.4rem;
+  }
+  &.medium {
+    font-size: 1.1rem;
+    padding: 0.2rem 0.6rem;
+    width: 13rem;
+  }
+  &.large {
+    font-size: 1.1rem;
+    padding: 0.2rem 1rem;
+    width: 16rem;
+  }
+}
+
+.cms__HoverInput {
+  border: 0.1rem solid #dcdcdc;
+  outline: none;
+  color: black;
+  height: 2rem;
+  border-radius: 0.4rem;
+
+  &.small {
+    font-size: 1.1rem;
+    padding: 0.2rem 0.4rem;
+  }
+  &.medium {
+    font-size: 1.1rem;
+    padding: 0.2rem 0.6rem;
+    width: 13rem;
+  }
+  &.large {
+    font-size: 1.1rem;
+    padding: 0.2rem 1rem;
+    width: 16rem;
+  }
+}
+
+.cms__HoverInput:hover {
+  border: 1px solid black;
+}
+
+label {
+  color: #1e3d8c;
+  font-weight: 400;
+  font-size: 1.2rem;
+
+  .cms__Input {
+    border: 0.1rem solid #1e3d8c;
+    outline: none;
+    color: #1e3d8c;
+    height: 2rem;
+    border-radius: 0.4rem;
+    display: block;
+    margin-top: 0.3rem;
+
+    &.small {
+      font-size: 1.1rem;
+      padding: 0.2rem 0.4rem;
+    }
+    &.medium {
+      font-size: 1.1rem;
+      padding: 0.2rem 0.6rem;
+      width: 13rem;
+    }
+    &.large {
+      font-size: 1.1rem;
+      padding: 0.2rem 1rem;
+      width: 16rem;
+    }
+  }
+}
+.cms__Input::placeholder {
+  color: #1e3d8c;
+}
+
+.cms__label {
+  color: #dc2626;
+  font-weight: 400;
+  font-size: 1.2rem;
+
+  .cms__Error__Input {
+    border: 0.1rem solid #dc2626;
+    outline: none;
+    color: #000000;
+    height: 2rem;
+    border-radius: 0.4rem;
+    display: block;
+    margin-top: 0.3rem;
+
+    &.small {
+      font-size: 1.1rem;
+      padding: 0.2rem 0.4rem;
+    }
+    &.medium {
+      font-size: 1.1rem;
+      padding: 0.2rem 0.6rem;
+      width: 13rem;
+    }
+    &.large {
+      font-size: 1.1rem;
+      padding: 0.2rem 1rem;
+      width: 16rem;
+    }
+  }
+}
+
+.cms__Error__Input::placeholder {
+  color: #000000;
+}

@@ -1,0 +1,51 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 4em 18em;
+}
+
+.cms-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  border-radius: 0.4em;
+  font-size: 1em;
+  font-weight: 600;
+  border-radius: 1.2em;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  color: white;
+  &.primary {
+    background-color: #1e3d8c;
+  }
+  &.secondary {
+    background-color: #6a94ff;
+  }
+  &.success {
+    background-color: #28a745;
+  }
+  &.danger {
+    background-color: #dc3545;
+  }
+  &.info {
+    background-color: #2898ff;
+  }
+  &.warning {
+    background-color: #ffc107;
+    color: #343a40;
+  }
+  &.light {
+    background-color: #bfd0fd;
+    color: #343a40;
+  }
+  &.danger-circle {
+    background-color: #b91c1c;
+    padding: 0.6rem 0.8rem;
+    border-radius: 100;
+  }
+  &.danger-circle-round {
+    background-color: #b91c1c;
+    padding: 0.8rem 0.8rem;
+    border-radius: 100;
+  }
+}

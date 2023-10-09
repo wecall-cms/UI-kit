@@ -1,0 +1,53 @@
+.avatar__image {
+  display: flex;
+  .avatar__list {
+    background-color: #1e3d8c;
+    border-radius: 100rem;
+    font-size: 1rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    align-items: center;
+    border: 0.2rem solid white;
+
+    img {
+      overflow: hidden;
+      height: 2.4rem;
+      width: 2.4rem;
+      border-radius: 100rem;
+      &.large {
+        height: 4.4rem;
+        width: 4.4rem;
+      }
+      &.medium {
+        height: 3.4rem;
+        width: 3.4rem;
+      }
+      &.small {
+        height: 2.4rem;
+        width: 2.4rem;
+      }
+      &.xsmall {
+        height: 1.4rem;
+        width: 1.4rem;
+      }
+    }
+
+    &.secondary {
+      background-color: #1977f3;
+      &.large {
+        margin-left: -2rem;
+      }
+      &.medium {
+        margin-left: -1.5rem;
+      }
+      &.small {
+        margin-left: -1rem;
+      }
+      &.xsmall {
+        margin-left: -0.5rem;
+      }
+    }
+  }
+}

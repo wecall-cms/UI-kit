@@ -1,0 +1,13 @@
+.cms__dropdown {
+    width: fit-content;
+    &.small {
+      width: 10rem;
+    }
+    &.medium {
+      width: 15rem;
+    }
+    &.large {
+      width: 20rem;
+    }
+  }
+  

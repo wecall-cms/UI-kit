@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Accordion from './components/Accordion/Accordion';
+import Avatar from './components/Avatar/Avatar';
+import Badges from './components/Badges/Badges';
+import Button from './components/Buttons/Button';
+import Cards from './components/Cards/Cards';
+import Dropdown from './components/Dropdown/Dropdown';
+import Input from './components/Input/Input';
+import MultuSelectDropdown from './components/Multi Select Dropdown/MultuSelectDropdown';
+import Progress from './components/Progress/Progress';
+import RangeSlider from './components/RangeSlider.js/RangeSlider';
+import Tables from './components/Table/Tables';
+import Tabs from './components/Tabs/Tabs';
+import Toast from './components/Toast/Toast';
+import Typography from './components/Typography/Typography';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Button/>
+      <Tabs/>
+      <Typography/>
+      <Badges/>
+      <Cards/>
+      <Accordion/>
+      <RangeSlider/>
+      {/* <Progress/> */}
+      <Avatar/>
+      <Input/>
+      <Dropdown/>
+      <MultuSelectDropdown/>
+      <Toast/>
+      <Tables/>
     </div>
+
   );
 }
 
