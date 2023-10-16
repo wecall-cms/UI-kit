@@ -1,0 +1,9 @@
+.main-layout-container {
+  display: flex;
+
+  .main-container {
+    flex: 1;
+    height: calc(100vh - 60px); // 100vh - height of navbar
+    overflow: auto;
+  }
+}
