@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import IconLanders from "../../assets/Sidebar/landers.svg";
 import IconQuiz from "../../assets/Sidebar/quiz.svg";
 import IconCongrats from "../../assets/Sidebar/congrats.svg";
 import IconSettings from "../../assets/Sidebar/settings.svg";
 import "./sidemenu.scss";
 import { HiMenu } from "react-icons/hi";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SideMenuItems = [
   {
@@ -31,9 +31,22 @@ const SideMenuItems = [
 ];
 
 const SideMenu = () => {
-  const [active, setActive] = React.useState(0);
   const [collapsed, setCollapsed] = React.useState(false);
+  const [active, setActive] = React.useState("landers");
+  const location = useLocation();
+  const selectedPath = location.pathname.split("/")[1];
+  // capitalize first letter
+  const selectedPathRenamed =
+    location.pathname.split("/")[1].charAt(0).toUpperCase() +
+    location.pathname.split("/")[1].slice(1);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (selectedPathRenamed) {
+      setActive(selectedPathRenamed);
+    }
+  }, [selectedPathRenamed]);
+
   return (
     <aside className={`menu-container ${collapsed ? "collapsed" : "expanded"}`}>
       <div className="menu-heading-container">
