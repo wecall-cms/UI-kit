@@ -6,6 +6,7 @@
   border-top-right-radius: 24px;
   border-bottom-right-radius: 24px;
   transition: width 0.3s ease-in-out;
+  position: relative;
   &.collapsed {
     width: 80px;
     .menu-heading-container {
@@ -59,6 +60,29 @@
       }
       &.active {
         border-left: 1px solid #fff;
+      }
+    }
+  }
+
+  .menu-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    width: 70%;
+    gap: 1rem;
+    .footer {
+      &.label {
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+      }
+      &.description {
+        margin-top: 0.5rem;
+        font-size: 12px;
+        font-weight: 300;
+        color: #fff;
       }
     }
   }
