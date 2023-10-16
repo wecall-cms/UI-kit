@@ -17,10 +17,11 @@
   padding: 0.8rem 1.2rem;
   &.outline {
     background-color: white;
-    border: 2px solid #1d387e;
-    color: black;
+    outline: 2px solid #1d387e;
+    color: #1d387e;
+
     p {
-      color: black;
+      color: #1d387e;
     }
     &:hover {
       background-color: #cad9ff;
@@ -31,11 +32,12 @@
     }
     &:active {
       background-color: #cad9ff;
-      border: 2px solid #1d387e;
+      outline: 2px solid #1d387e;
     }
   }
   &.dark-light {
     background-color: #bfd0fd;
+    color: #1d387e;
     &:hover {
       background-color: #95b2ff;
     }
