@@ -1,58 +1,57 @@
-import React, { useState } from 'react';
-import Select from 'react-select';
-import './Dropdown.scss'
+import React, { useState } from "react";
+import Select from "react-select";
+import "./Dropdown.scss";
 
-const Dropdown = () => {
-    return (
-        <div>
-            <div>
-                <h1>Dropdown Example</h1>
-                <div className='container'>
-                    <div className='cms__flex'>
+const reactSelectCustomStyles = {
+  dropdownIndicator: (provided, state) => ({
+    ...provided,
+    color: "#000",
+    "&:hover": {
+      color: "#2563EB",
+    },
+  }),
+  control: (provided, state) => ({
+    ...provided,
+    boxShadow: "none",
+    textAlign: "left",
+    "&:hover": {
+      border: "1.5px solid #2563EB",
+      // Change dropdownIndicator color on control hover
+      svg: {
+        color: "#2563EB",
+      },
+    },
+  }),
+  //   menu: (provided, state) => ({}),
+  option: (provided, state) => ({
+    ...provided,
+    textAlign: "left",
+    "&:hover": {
+      backgroundColor: "#DBEAFE",
+      color: "#000",
+    },
+  }),
+};
 
-                        <Dropdowns size={"small"} />
-                        <Dropdowns size={"medium"} />
-                        <Dropdowns size={"large"} />
-                    </div>
+const Dropdown = ({ size, placeholder, options, searchable }) => {
+  const [selectedOption, setSelectedOption] = useState(null);
 
-                    <div className='cms__flex'>
+  return (
+    <div className="App">
+      <Select
+        placeholder={placeholder}
+        defaultValue={selectedOption}
+        onChange={setSelectedOption}
+        options={options}
+        className={`cms__dropdown ${size}`}
+        styles={reactSelectCustomStyles}
+        isSearchable={searchable ? true : false}
+        components={{
+          IndicatorSeparator: () => null,
+        }}
+      />
+    </div>
+  );
+};
 
-                        <Dropdowns size={"small"} />
-                        <Dropdowns size={"medium"} />
-                        <Dropdowns size={"large"} />
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    )
-}
-
-export default Dropdown
-
-
-
-
-
-const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-];
-
-function Dropdowns({ size }) {
-    const [selectedOption, setSelectedOption] = useState(null);
-
-    return (
-        <div className="App">
-            <Select
-                defaultValue={selectedOption}
-                onChange={setSelectedOption}
-                options={options}
-                className={`cms__dropdown ${size}`}
-
-            />
-        </div>
-    );
-}
+export default Dropdown;
