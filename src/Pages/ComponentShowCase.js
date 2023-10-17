@@ -14,6 +14,7 @@ import AvatarDemo from "../DemoComponents/AvatarDemo";
 import ButtonDemo from "../DemoComponents/ButtonDemo";
 import BadgeDemo from "../DemoComponents/BadgeDemo";
 import CardsDemo from "../DemoComponents/CardDemo";
+import ToastDemo from "../DemoComponents/ToastMessageDemo";
 
 const ComponentShowCase = () => {
   return (
@@ -30,7 +31,7 @@ const ComponentShowCase = () => {
       <Input />
       <Dropdown />
       <MultuSelectDropdown />
-      <Toast />
+      <ToastDemo />
       <Tables />
     </div>
   );

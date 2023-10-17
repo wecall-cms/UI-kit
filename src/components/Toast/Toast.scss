@@ -26,6 +26,8 @@
       font-size: 1.4rem;
       font-weight: 600;
       .cms__icon {
+        display: flex;
+        align-items: center;
         color: #fe2c25;
         &.error {
           color: #fe2c25;
@@ -42,6 +44,9 @@
           color: #35c759;
         }
       }
+    }
+    .cms__close {
+      cursor: pointer;
     }
   }
   .cms__body {
