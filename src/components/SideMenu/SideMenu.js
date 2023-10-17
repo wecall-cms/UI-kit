@@ -76,7 +76,7 @@ const SideMenu = () => {
           </li>
         ))}
       </ul>
-      <footer className="menu-footer">
+      <footer className={`menu-footer ${collapsed ? "hidden" : "visible"}`}>
         <p className="footer label">© 2023 CMS Adstia</p>
         <p className="footer description">
           BeautIful UI components, designed handcrafted with eye to the detail.

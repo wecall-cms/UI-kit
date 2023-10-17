@@ -1,7 +1,6 @@
 import React from "react";
 
 import Accordion from "../components/Accordion/Accordion";
-import Cards from "../components/Cards/Cards";
 import Dropdown from "../components/Dropdown/Dropdown";
 import Input from "../components/Input/Input";
 import MultuSelectDropdown from "../components/Multi Select Dropdown/MultuSelectDropdown";
@@ -14,6 +13,7 @@ import Typography from "../components/Typography/Typography";
 import AvatarDemo from "../DemoComponents/AvatarDemo";
 import ButtonDemo from "../DemoComponents/ButtonDemo";
 import BadgeDemo from "../DemoComponents/BadgeDemo";
+import CardsDemo from "../DemoComponents/CardDemo";
 
 const ComponentShowCase = () => {
   return (
@@ -22,7 +22,7 @@ const ComponentShowCase = () => {
       <Tabs />
       <Typography />
       <BadgeDemo />
-      <Cards />
+      <CardsDemo />
       <Accordion />
       <RangeSlider />
       {/* <Progress/> */}

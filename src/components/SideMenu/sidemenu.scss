@@ -54,7 +54,10 @@
       display: flex;
       gap: 1rem;
       align-items: center;
-
+      .item-icon {
+        width: 18px;
+        height: 18px;
+      }
       &:hover {
         border-left: 1px solid #fff;
       }
@@ -72,6 +75,12 @@
     text-align: left;
     width: 70%;
     gap: 1rem;
+    &.hidden {
+      display: none;
+    }
+    &.visible {
+      display: block;
+    }
     .footer {
       &.label {
         font-size: 14px;
