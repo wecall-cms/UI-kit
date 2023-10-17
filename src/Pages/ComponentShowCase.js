@@ -14,7 +14,8 @@ import ButtonDemo from "../DemoComponents/ButtonDemo";
 import BadgeDemo from "../DemoComponents/BadgeDemo";
 import CardsDemo from "../DemoComponents/CardDemo";
 import ToastDemo from "../DemoComponents/ToastMessageDemo";
-import DropdownDemo from "../DemoComponents/DropDownDemo";
+import DropdownDemo from "../DemoComponents/DropDown/DropDownDemo";
+import MultiSelectDropDownDemo from "../DemoComponents/DropDown/MultiDropDownDemo";
 
 const ComponentShowCase = () => {
   return (
@@ -30,7 +31,7 @@ const ComponentShowCase = () => {
       <AvatarDemo />
       <Input />
       <DropdownDemo />
-      <MultuSelectDropdown />
+      <MultiSelectDropDownDemo />
       <ToastDemo />
       <Tables />
     </div>

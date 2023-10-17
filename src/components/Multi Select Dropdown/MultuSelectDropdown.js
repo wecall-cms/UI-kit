@@ -1,52 +1,108 @@
-import React, { useState } from "react";
-import { MultiSelect } from "react-multi-select-component";
-import './MultiSelectDropdown.scss'
+import React, { useEffect, useState } from "react";
+// import { MultiSelect } from "react-multi-select-component";
+import Select from "react-select";
+import "./MultiSelectDropdown.scss";
+import { reactSelectCustomStyles } from "../../Constant/SelectStyles";
 
-const MultuSelectDropdown = () => {
-    return (
-        <div>
-            <div>
-                <div>
-                    <h1>Multi Select Dropdown Example</h1>
-                    <div className='container'>
-                        <div className='cms__flex'>
+const CustomValueContainer = ({ children, ...props }) => {
+  const selectedCount = props.getValue().length;
 
-                            <SelectDropdown size={"small"} />
-                            <SelectDropdown size={"medium"} />
-                            <SelectDropdown size={"large"} />
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    )
-}
-
-export default MultuSelectDropdown
-
-
-
-
-const options = [
-    { label: "Grapes 🍇", value: "grapes" },
-    { label: "Mango 🥭", value: "mango" },
-    { label: "Strawberry 🍓", value: "strawberry", disabled: true },
-];
-
-const SelectDropdown = ({ size }) => {
-    const [selected, setSelected] = useState([]);
-
-    return (
-        <div>
-            <MultiSelect
-                options={options}
-                value={selected}
-                onChange={setSelected}
-                labelledBy="Select"
-                className={`cms__dropdown ${size}`}
-
-            />
-        </div>
-    );
+  return (
+    <div
+      style={{
+        display: "flex",
+        paddingLeft: "10px",
+        width: "100%",
+      }}
+      onClick={() => {
+        props.selectProps.menuIsOpen
+          ? props.selectProps.onMenuClose()
+          : props.selectProps.onMenuOpen();
+      }}
+      {...props}
+    >
+      {selectedCount} Selected
+    </div>
+  );
 };
+
+const CustomOption = ({ innerProps, label, isSelected, onSelectOption }) => (
+  <div
+    {...innerProps}
+    style={{
+      textAlign: "left",
+    }}
+  >
+    <label
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "10px",
+        paddingLeft: "10px",
+      }}
+    >
+      <input
+        style={{
+          width: "14px",
+          height: "14px",
+        }}
+        type="checkbox"
+        checked={isSelected}
+        onChange={(e) => {
+          e.stopPropagation();
+          onSelectOption(label);
+        }}
+      />
+      {label}
+    </label>
+  </div>
+);
+
+const MultiSelectDropDown = ({ size, options }) => {
+  const [selected, setSelected] = useState([]);
+
+  const handleOptionSelect = (optionLabel) => {
+    setSelected((prevSelected) => {
+      const isOptionSelected = prevSelected.includes(optionLabel);
+      const newSelected = isOptionSelected
+        ? prevSelected.filter((option) => option !== optionLabel)
+        : [...prevSelected];
+      return newSelected;
+    });
+  };
+
+  const customOptions = options.map((option) => ({
+    label: option.label,
+    value: option.value,
+    isSelected: selected.includes(option.value),
+  }));
+
+  return (
+    <div>
+      <Select
+        isMulti
+        isClearable={false}
+        hideSelectedOptions={false}
+        options={customOptions}
+        value={selected}
+        onChange={setSelected}
+        className={`cms__dropdown ${size}`}
+        styles={reactSelectCustomStyles}
+        components={{
+          IndicatorSeparator: () => null,
+          ValueContainer: (props) => <CustomValueContainer {...props} />,
+          Option: ({ innerProps, label, isSelected }) => (
+            <CustomOption
+              innerProps={innerProps}
+              label={label}
+              isSelected={isSelected}
+              onSelectOption={handleOptionSelect}
+            />
+          ),
+        }}
+      />
+    </div>
+  );
+};
+
+export default MultiSelectDropDown;

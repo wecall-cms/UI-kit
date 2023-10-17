@@ -1,5 +1,5 @@
 import React from "react";
-import Dropdown from "../components/Dropdown/Dropdown";
+import Dropdown from "../../components/Dropdown/Dropdown";
 
 const options = [
   { label: "Zero Two", value: "zerotwo" },
