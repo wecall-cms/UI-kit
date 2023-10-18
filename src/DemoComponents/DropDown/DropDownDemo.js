@@ -3,7 +3,7 @@ import Dropdown from "../../components/Dropdown/Dropdown";
 
 const options = [
   { label: "Zero Two", value: "zerotwo" },
-  { label: "Luffy", value: "luffy" },
+  { label: "Luffy", value: "luffy", isDisabled: true },
   { label: "Robin", value: "robin" },
   { label: "Nami", value: "nami" },
   { label: "Zoro", value: "zoro" },

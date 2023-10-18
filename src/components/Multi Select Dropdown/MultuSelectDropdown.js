@@ -34,29 +34,36 @@ const CustomOption = ({
   label,
   isSelected,
   onSelectOption,
-  props,
-}) => (
-  <div
-    className="custom-option-menu"
-    {...innerProps}
-    onBlur={() => {
-      console.log("onBlur");
-      props.selectProps.onMenuClose();
-    }}
-  >
-    <label className="custom-option-menu-label">
-      <input
-        type="checkbox"
-        checked={isSelected}
-        onChange={(e) => {
-          e.stopPropagation();
-          onSelectOption(label);
-        }}
-      />
-      {label}
-    </label>
-  </div>
-);
+  ...props
+}) => {
+  const isDisabled = props?.isDisabled;
+  console.log("propsCustomOption", props);
+
+  return (
+    <div
+      className={`custom-option-menu ${isDisabled ? "is-disabled" : ""}`}
+      {...innerProps}
+      onBlur={() => {
+        console.log("onBlur");
+        props.selectProps.onMenuClose();
+      }}
+    >
+      <label className="custom-option-menu-label">
+        <input
+          type="checkbox"
+          checked={isSelected}
+          onChange={(e) => {
+            if (!props.isDisabled) {
+              e.stopPropagation();
+              onSelectOption(label);
+            }
+          }}
+        />
+        {label}
+      </label>
+    </div>
+  );
+};
 
 const MultiSelectDropDown = ({ size, options }) => {
   const [selected, setSelected] = useState([]);
@@ -75,6 +82,7 @@ const MultiSelectDropDown = ({ size, options }) => {
     label: option.label,
     value: option.value,
     isSelected: selected.includes(option.value),
+    isDisabled: option.isDisabled,
   }));
 
   return (
@@ -91,12 +99,13 @@ const MultiSelectDropDown = ({ size, options }) => {
         components={{
           IndicatorSeparator: () => null,
           ValueContainer: (props) => <CustomValueContainer {...props} />,
-          Option: ({ innerProps, label, isSelected, props }) => (
+          Option: ({ innerProps, label, isSelected, data, ...props }) => (
             <CustomOption
               innerProps={innerProps}
               label={label}
               isSelected={isSelected}
               onSelectOption={handleOptionSelect}
+              data={props.data}
               {...props}
             />
           ),

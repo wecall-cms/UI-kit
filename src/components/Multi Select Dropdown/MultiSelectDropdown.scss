@@ -17,7 +17,6 @@ $dropdown-bg: #dbeafe;
   padding: 8px;
   color: black;
   background: #f8fafc;
-
   &:hover {
     background-color: $dropdown-bg;
   }
@@ -34,6 +33,11 @@ $dropdown-bg: #dbeafe;
       &:checked {
         background: #2563eb;
       }
+    }
+  }
+  &.is-disabled {
+    label {
+      color: #a0aec0;
     }
   }
 }

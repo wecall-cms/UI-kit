@@ -4,7 +4,7 @@ import MultiSelectDropDown from "../../components/Multi Select Dropdown/MultuSel
 const options = [
   { label: "Grapes", value: "grapes" },
   { label: "Mango", value: "mango" },
-  { label: "Strawberry", value: "strawberry", disabled: true },
+  { label: "Strawberry", value: "strawberry", isDisabled: true },
 ];
 
 const MultiSelectDropDownDemo = () => {

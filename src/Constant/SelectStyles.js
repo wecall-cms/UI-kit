@@ -1,7 +1,7 @@
 export const reactSelectCustomStyles = {
   dropdownIndicator: (provided, state) => ({
     ...provided,
-    color: "#000",
+    color: "#334155",
     "&:hover": {
       color: "#2563EB",
     },
@@ -25,10 +25,10 @@ export const reactSelectCustomStyles = {
     ...provided,
     textAlign: "left",
     backgroundColor: state.isSelected ? "#DBEAFE" : "#f8fafc",
-    color: state.isSelected ? "#000" : "#000",
+    color: state.isDisabled ? "#adb4bd" : "#334155",
     "&:hover": {
       backgroundColor: "#DBEAFE",
-      color: "#000",
+      color: "#334155",
     },
   }),
 };

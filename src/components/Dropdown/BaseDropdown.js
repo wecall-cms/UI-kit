@@ -27,7 +27,7 @@ const BaseDropdown = ({
       fontSize: "14px",
       fontWeight: "400",
       svg: {
-        color: error ? "#DC2626" : "#000",
+        color: error ? "#DC2626" : "##334155",
       },
       border: `1.5px solid ${error ? "#DC2626" : "#cccccc"}`,
       "&:hover, &:focus": {
@@ -47,10 +47,10 @@ const BaseDropdown = ({
       backgroundColor: state.isSelected
         ? ` ${error ? "#FEE2E2" : "#DBEAFE"}`
         : "#f8fafc",
-      color: state.isSelected ? "#000" : "#000",
+      color: state.isDisabled ? "#adb4bd" : "#334155",
       "&:hover": {
         backgroundColor: error ? "#FEE2E2" : "#DBEAFE",
-        color: "#000",
+        color: "#334155",
       },
     }),
   };
@@ -64,6 +64,7 @@ const BaseDropdown = ({
       className={`cms__dropdown ${size}`}
       styles={reactSelectCustomStyles}
       isSearchable={searchable ? true : false}
+      isOptionDisabled={(option) => option.isDisabled} // disable options
       components={{
         IndicatorSeparator: () => null,
       }}
