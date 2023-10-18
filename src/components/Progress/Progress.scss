@@ -1,0 +1,28 @@
+$progress-bg: #c7d3eb;
+$progress-color: #3b82f6;
+
+.progress {
+  transition: width 0.5s ease-in-out;
+  position: relative;
+  height: 1rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  background-color: $progress-bg;
+  color: $progress-color;
+  border-radius: 10px;
+  width: 100%;
+  margin: 0;
+  height: 12px;
+
+  &::-moz-progress-bar {
+    background: $progress-color;
+  }
+
+  &::-webkit-progress-value {
+    background: $progress-color;
+  }
+
+  &::-webkit-progress-bar {
+    background: $progress-bg;
+  }
+}
