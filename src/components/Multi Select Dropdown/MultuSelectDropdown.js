@@ -19,33 +19,33 @@ const CustomValueContainer = ({ children, ...props }) => {
           ? props.selectProps.onMenuClose()
           : props.selectProps.onMenuOpen();
       }}
+      onBlur={() => {
+        props.selectProps.onMenuClose();
+      }}
       {...props}
     >
-      {selectedCount} Selected
+      {selectedCount > 0 ? selectedCount + " Selected" : "Select"}
     </div>
   );
 };
 
-const CustomOption = ({ innerProps, label, isSelected, onSelectOption }) => (
+const CustomOption = ({
+  innerProps,
+  label,
+  isSelected,
+  onSelectOption,
+  props,
+}) => (
   <div
+    className="custom-option-menu"
     {...innerProps}
-    style={{
-      textAlign: "left",
+    onBlur={() => {
+      console.log("onBlur");
+      props.selectProps.onMenuClose();
     }}
   >
-    <label
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "10px",
-        paddingLeft: "10px",
-      }}
-    >
+    <label className="custom-option-menu-label">
       <input
-        style={{
-          width: "14px",
-          height: "14px",
-        }}
         type="checkbox"
         checked={isSelected}
         onChange={(e) => {
@@ -91,12 +91,13 @@ const MultiSelectDropDown = ({ size, options }) => {
         components={{
           IndicatorSeparator: () => null,
           ValueContainer: (props) => <CustomValueContainer {...props} />,
-          Option: ({ innerProps, label, isSelected }) => (
+          Option: ({ innerProps, label, isSelected, props }) => (
             <CustomOption
               innerProps={innerProps}
               label={label}
               isSelected={isSelected}
               onSelectOption={handleOptionSelect}
+              {...props}
             />
           ),
         }}

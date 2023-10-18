@@ -10,9 +10,9 @@ export const reactSelectCustomStyles = {
     ...provided,
     boxShadow: "none",
     textAlign: "left",
-    dislay: "flex",
+    display: "flex",
     flexWrap: "nowrap",
-    "&:hover": {
+    "&:hover, &:focus": {
       border: "1.5px solid #2563EB",
       // Change dropdownIndicator color on control hover
       svg: {
@@ -24,6 +24,8 @@ export const reactSelectCustomStyles = {
   option: (provided, state) => ({
     ...provided,
     textAlign: "left",
+    backgroundColor: state.isSelected ? "#DBEAFE" : "#f8fafc",
+    color: state.isSelected ? "#000" : "#000",
     "&:hover": {
       backgroundColor: "#DBEAFE",
       color: "#000",

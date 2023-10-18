@@ -17,7 +17,12 @@ const DropdownDemo = () => {
         <h1>Dropdown Example</h1>
         <div className="container">
           <div className="cms__flex">
-            <Dropdown options={options} size={"small"} placeholder={"Small"} />
+            <Dropdown
+              error
+              options={options}
+              size={"small"}
+              placeholder={"Small"}
+            />
             <Dropdown options={options} size={"medium"} searchable />
             <Dropdown options={options} size={"large"} />
           </div>
