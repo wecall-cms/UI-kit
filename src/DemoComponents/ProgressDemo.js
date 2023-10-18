@@ -22,6 +22,7 @@ const steps = [
 
 const ProgressDemo = () => {
   const [activeStep, setActiveStep] = useState(1);
+
   return (
     <div>
       <h1>Progress Indicator Example</h1>
@@ -36,8 +37,16 @@ const ProgressDemo = () => {
         <br />
         <p> Progress Steps</p>
         <Progress type="steps" steps={steps} activeStep={activeStep} />
-        {/* <button onClick={() => setActiveStep(activeStep + 1)}>Next</button>
-        <button onClick={() => setActiveStep(activeStep - 1)}>Prev</button> */}
+
+        <br />
+        <br />
+        <p> Progress Steps Linear</p>
+        <Progress type="stepsLinear" steps={steps} activeStep={activeStep} />
+        <br />
+        <br />
+        <p>control buttons only for demo purposes</p>
+        <button onClick={() => setActiveStep(activeStep - 1)}>Prev</button>
+        <button onClick={() => setActiveStep(activeStep + 1)}>Next</button>
       </div>
     </div>
   );

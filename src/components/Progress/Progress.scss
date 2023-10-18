@@ -66,7 +66,6 @@ $progress-color: #3b82f6;
 
 .progress-steps {
   width: 100%;
-
   .progress-steps-wrapper {
     width: fit-content;
     display: flex;
@@ -97,6 +96,29 @@ $progress-color: #3b82f6;
       background-color: $progress-color;
       &:last-child {
         display: none;
+      }
+    }
+  }
+}
+
+.linear-progress-steps {
+  width: 100%;
+  .linear-progress-steps-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    .linear-progress-step {
+      height: 12px;
+      border-radius: 10px;
+      background-color: $progress-bg;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 600;
+      &.active {
+        background-color: $progress-color;
+        color: #fff;
       }
     }
   }

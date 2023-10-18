@@ -11,13 +11,11 @@ const Progress = ({ type, value, steps, activeStep, onChange }) => {
   return (
     <>
       {type === "linear" && <ProgressLinear value={value} />}
-      {type === "stepsLinear" && "steps linear"}
+      {type === "stepsLinear" && (
+        <ProgressStepsLinear steps={steps} activeStep={activeStep} />
+      )}
       {type === "steps" && (
-        <ProgressSteps
-          steps={steps}
-          activeStep={activeStep}
-          onChange={onChange}
-        />
+        <ProgressSteps steps={steps} activeStep={activeStep} />
       )}
       {type === "range" && <ProgressRange value={value} />}
     </>
@@ -85,11 +83,7 @@ const ProgressRange = ({ value: propProgress = 0 }) => {
   );
 };
 
-const ProgressSteps = ({ steps, activeStep, onChange }) => {
-  if (typeof onChange === "function") {
-    onChange(activeStep);
-  }
-
+const ProgressSteps = ({ steps, activeStep }) => {
   return (
     <div className="progress-steps">
       <div className="progress-steps-wrapper">
@@ -113,6 +107,26 @@ const ProgressSteps = ({ steps, activeStep, onChange }) => {
             </div>
             <div className="progress-step-line" />
           </>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const ProgressStepsLinear = ({ steps, activeStep }) => {
+  return (
+    <div className="linear-progress-steps">
+      <div className="linear-progress-steps-wrapper">
+        {steps.map((step, index) => (
+          <div
+            className={`linear-progress-step ${
+              activeStep === index + 1 && "active"
+            }`}
+            key={index}
+            style={{
+              width: `${100 / steps.length}%`,
+            }}
+          />
         ))}
       </div>
     </div>
