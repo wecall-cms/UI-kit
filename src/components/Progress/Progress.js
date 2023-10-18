@@ -88,12 +88,11 @@ const ProgressSteps = ({ steps, activeStep }) => {
     <div className="progress-steps">
       <div className="progress-steps-wrapper">
         {steps.map((step, index) => (
-          <>
+          <div key={index}>
             <div
               className={`progress-step ${
                 activeStep === index + 1 && "active"
               } ${activeStep > index + 1 && "completed"}`}
-              key={index}
             >
               {activeStep > index + 1 ? (
                 <BsCheck2
@@ -106,7 +105,7 @@ const ProgressSteps = ({ steps, activeStep }) => {
               )}
             </div>
             <div className="progress-step-line" />
-          </>
+          </div>
         ))}
       </div>
     </div>

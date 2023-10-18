@@ -35,7 +35,10 @@ const ATMCard = ({
         <div className="atm-card__image">
           {profile.map((i, index) => {
             return (
-              <div className={`image ${index > 0 ? "seconadry" : ""}`}>
+              <div
+                className={`image ${index > 0 ? "seconadry" : ""}`}
+                key={i?.id ?? index}
+              >
                 <p className={`${i.class} `}> {i.name}</p>
               </div>
             );

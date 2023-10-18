@@ -1,0 +1,110 @@
+$progress-color: #3b82f6;
+$progress-bg: #edeef1;
+
+.range-container {
+  position: relative;
+  height: 25px;
+  .multi-slider {
+    position: relative;
+  }
+
+  .multi-slider__track,
+  .multi-slider__range,
+  .multi-slider__left-value,
+  .multi-slider__right-value {
+    position: absolute;
+  }
+
+  .multi-slider__track,
+  .multi-slider__range {
+    border-radius: 10px;
+    height: 8px;
+  }
+
+  .multi-slider__track {
+    background-color: $progress-bg;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .multi-slider__range {
+    background-color: $progress-color;
+    z-index: 2;
+  }
+
+  .multi-slider__left-value,
+  .multi-slider__right-value {
+    color: #000;
+    font-size: 12px;
+    margin-top: 20px;
+  }
+
+  .multi-slider__left-value {
+    left: 6px;
+  }
+
+  .multi-slider__right-value {
+    right: -4px;
+  }
+
+  /* Removing the default appearance */
+  .rng-thumb,
+  .rng-thumb::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .rng-thumb {
+    &.outlined::-webkit-slider-thumb,
+    &.outlined::-moz-range-thumb {
+      outline: 4px solid white !important;
+    }
+  }
+
+  .rng-thumb {
+    pointer-events: none;
+    position: absolute;
+    height: 0;
+    width: 100%;
+    outline: none;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.16));
+  }
+
+  .rng-thumb--left {
+    z-index: 3;
+    left: 0;
+    transform: translateX(-20px);
+  }
+
+  .rng-thumb--right {
+    z-index: 4;
+    left: 0;
+  }
+
+  /* For Chrome browsers */
+  .rng-thumb::-webkit-slider-thumb {
+    width: 25px;
+    height: 25px;
+    background-color: $progress-color;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 4px;
+    pointer-events: all;
+    position: relative;
+  }
+
+  /* For Firefox browsers */
+  .rng-thumb::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background-color: $progress-color;
+    border: none;
+    border-radius: 50%;
+    // box-shadow: 0 0 1px 1px #ced4da;
+    cursor: pointer;
+    margin-top: 4px;
+    pointer-events: all;
+    position: relative;
+  }
+}

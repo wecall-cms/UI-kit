@@ -57,13 +57,14 @@ const SideMenu = () => {
         <h1 className="menu-heading">CMS</h1>
       </div>
       <ul className="menu-items">
-        {SideMenuItems.map((item) => (
+        {SideMenuItems.map((item, index) => (
           <li
             className={`menu-item ${active === item.label ? "active" : ""}`}
             onClick={() => {
               setActive(item.label);
               navigate(item.to);
             }}
+            key={item?.id ?? index}
           >
             <img
               className="item-icon"
