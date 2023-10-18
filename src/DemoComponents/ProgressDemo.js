@@ -6,7 +6,14 @@ const ProgressDemo = () => {
     <div>
       <h1>Progress Indicator Example</h1>
       <div className="container">
-        <Progress type="stepsLinear" progress={30} />
+        <p>Linear</p>
+        <Progress type="linear" progress={30} />
+        <br />
+        <br />
+        <p>Range</p>
+        <Progress type="range" progress={30} />
+
+        <Progress progress={50} />
       </div>
     </div>
   );
