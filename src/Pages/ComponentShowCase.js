@@ -14,13 +14,16 @@ import MultiSelectDropDownDemo from "../DemoComponents/DropDown/MultiDropDownDem
 import ProgressDemo from "../DemoComponents/ProgressDemo";
 import RangeSlidersDemo from "../DemoComponents/RangeSlidersDemo";
 import TypographyDemo from "../DemoComponents/TypograhpyDemo";
-import AccordionDemo from "../DemoComponents/Accordion";
+import AccordionDemo from "../DemoComponents/AccordionDemo";
+import TabsDemo from "../DemoComponents/TabsDemo";
+import InputDemo from "../DemoComponents/InputDemo";
+import TablesDemo from "../DemoComponents/TablesDemo";
 
 const ComponentShowCase = () => {
   return (
     <div>
       <ButtonDemo />
-      <Tabs />
+      <TabsDemo />
       <TypographyDemo />
       <BadgeDemo />
       <CardsDemo />
@@ -28,11 +31,11 @@ const ComponentShowCase = () => {
       <RangeSlidersDemo />
       <ProgressDemo />
       <AvatarDemo />
-      <Input />
+      <InputDemo />
       <DropdownDemo />
       <MultiSelectDropDownDemo />
       <ToastDemo />
-      <Tables />
+      <TablesDemo />
     </div>
   );
 };
