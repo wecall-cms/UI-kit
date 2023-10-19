@@ -1,7 +1,17 @@
 .accordion {
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+  &.size-small {
+    max-width: 350px;
+  }
+  &.size-medium {
+    max-width: 450px;
+  }
+  &.size-large {
+    max-width: 550px;
+  }
+  &.size-full {
+    max-width: 100%;
+  }
 }
 
 .accordion-item {

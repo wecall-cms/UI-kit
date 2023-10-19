@@ -14,6 +14,7 @@ import MultiSelectDropDownDemo from "../DemoComponents/DropDown/MultiDropDownDem
 import ProgressDemo from "../DemoComponents/ProgressDemo";
 import RangeSlidersDemo from "../DemoComponents/RangeSlidersDemo";
 import TypographyDemo from "../DemoComponents/TypograhpyDemo";
+import AccordionDemo from "../DemoComponents/Accordion";
 
 const ComponentShowCase = () => {
   return (
@@ -23,7 +24,7 @@ const ComponentShowCase = () => {
       <TypographyDemo />
       <BadgeDemo />
       <CardsDemo />
-      <Accordion />
+      <AccordionDemo />
       <RangeSlidersDemo />
       <ProgressDemo />
       <AvatarDemo />
